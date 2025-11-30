@@ -1,7 +1,6 @@
-[README (1).md](https://github.com/user-attachments/files/23841006/README.1.md)
 # Wazuh Deployment & Optimization Guide
 
-![Logo Wazuh Genérico](./assets/wazuh-logo.png)
+Designer.png
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
