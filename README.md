@@ -17,6 +17,11 @@ Aquí encontrarás información sobre:
 - Integración con herramientas SIEM.
 - Buenas prácticas para optimización y escalabilidad.
 
+Fuentes:
+
+https://documentation.wazuh.com/
+
+
 ---
 
 ## 📂 Estructura del Repositorio
