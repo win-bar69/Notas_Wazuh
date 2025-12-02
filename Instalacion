@@ -23,13 +23,18 @@ Shellsed -i "s/^deb /#deb /" /etc/apt/sources.list.d/wazuh.listapt updateMostrar
 
 🛠 Ajuste para entornos de alto rendimiento
 Por defecto, Wazuh usa 1 GB de memoria. Para mejorar el rendimiento, edita el archivo:
+
 Shellnano /etc/wazuh-indexer/jvm.optionsMostrar más líneas
+
 Agrega estas líneas:
+
 -Xms4g
 -Xmx4g
 
 Esto evita errores de rendimiento. Luego recarga los servicios:
-Shellsystemctl daemon-reloadsystemctl restart wazuh-indexerMostrar más líneas
+
+Shellsystemctl daemon-reloadsystemctl
+restart wazuh-indexerMostrar
 
 📚 Recursos adicionales
 
