@@ -1,39 +1,37 @@
-Instalación 
+🚀 Instalación de Wazuh All-in-One
+Este método instala todos los componentes (Indexer, Servidor y Dashboard) en un único nodo.
 
-Instalación All-in-One (único nodo)
-Este método instala todos los componentes (indexer, servidor y dashboard) en un mismo servidor:
+✅ Instalación rápida
+Ejecuta el siguiente comando:
+Shellcurl -sO https://packages.wazuh.com/4.14/wazuh-install.sh && sudo bash ./wazuh-install.sh -aMostrar más líneas
 
-curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
-
-Al finalizar debe verse algo así 
-
+🔍 Resultado esperado
+Al finalizar la instalación, deberías ver algo similar:
 INFO: You can access the web interface https://<WAZUH_DASHBOARD_IP_ADDRESS>
     User: admin
     Password: <ADMIN_PASSWORD>
 INFO: Installation finished.
 
-Tomar copia de la clave 
 
-Si no se hace se puede ubicar en: wazuh-install-files.tar
+🔑 Recuperar credenciales
+Si no guardaste la clave, puedes obtenerla desde el archivo wazuh-install-files.tar:
+Shellsudo tar -O -xvf wazuh-install-files.tar wazuh-install-files/wazuh-passwords.txtMostrar más líneas
 
-sudo tar -O -xvf wazuh-install-files.tar wazuh-install-files/wazuh-passwords.txt
+⚠️ Deshabilitar actualizaciones automáticas
+Wazuh recomienda deshabilitar las actualizaciones para evitar conflictos:
+Shellsed -i "s/^deb /#deb /" /etc/apt/sources.list.d/wazuh.listapt updateMostrar más líneas
 
-Nota; Wazu recomienda deshabilitar actualizaciones
-
-sed -i "s/^deb /#deb /" /etc/apt/sources.list.d/wazuh.list
-apt update
-
-En entornos de alto rendimiento se debe aumentar la memoria; por defecto Wazuh ocupa 1G esto se hace editando:
-
-/etc/wazuh-indexer/jvm.options
-
-Incluir
-
+🛠 Ajuste para entornos de alto rendimiento
+Por defecto, Wazuh usa 1 GB de memoria. Para mejorar el rendimiento, edita el archivo:
+Shellnano /etc/wazuh-indexer/jvm.optionsMostrar más líneas
+Agrega estas líneas:
 -Xms4g
 -Xmx4g
 
-Esto evita errores de rendimiento; luego recargar servicios
+Esto evita errores de rendimiento. Luego recarga los servicios:
+Shellsystemctl daemon-reloadsystemctl restart wazuh-indexerMostrar más líneas
 
-systemctl daemon-reload
-systemctl restart wazuh-indexer
+📚 Recursos adicionales
 
+Documentación oficial de Wazuh
+Guía de instalación All-in-One
