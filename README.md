@@ -12,7 +12,7 @@
 ## 📌 Descripción
 Este repositorio contiene **guías, configuraciones y optimizaciones** para la implementación de **Wazuh**, una plataforma de seguridad y monitoreo open source.  
 Aquí encontrarás información sobre:
-- Instalación en servidores Linux y Windows.
+- Instalación en servidores Linux Ubuntu server 24.04.3 LTS.
 - Configuración de agentes.
 - Integración con herramientas SIEM.
 - Buenas prácticas para optimización y escalabilidad.
