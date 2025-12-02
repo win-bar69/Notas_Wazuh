@@ -1,0 +1,24 @@
+Instalación 
+
+Instalación All-in-One (único nodo)
+Este método instala todos los componentes (indexer, servidor y dashboard) en un mismo servidor:
+
+curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh && sudo bash ./wazuh-install.sh -a
+
+Al finalizar debe verse algo así 
+
+INFO: You can access the web interface https://<WAZUH_DASHBOARD_IP_ADDRESS>
+    User: admin
+    Password: <ADMIN_PASSWORD>
+INFO: Installation finished.
+
+Tomar copia de la clave 
+
+Si no se hace se puede ubicar en: wazuh-install-files.tar
+
+sudo tar -O -xvf wazuh-install-files.tar wazuh-install-files/wazuh-passwords.txt
+
+Nota; Wazu recomienda deshabilitar actualizaciones
+
+sed -i "s/^deb /#deb /" /etc/apt/sources.list.d/wazuh.list
+apt update
