@@ -22,3 +22,18 @@ Nota; Wazu recomienda deshabilitar actualizaciones
 
 sed -i "s/^deb /#deb /" /etc/apt/sources.list.d/wazuh.list
 apt update
+
+En entornos de alto rendimiento se debe aumentar la memoria; por defecto Wazuh ocupa 1G esto se hace editando:
+
+/etc/wazuh-indexer/jvm.options
+
+Incluir
+
+-Xms4g
+-Xmx4g
+
+Esto evita errores de rendimiento; luego recargar servicios
+
+systemctl daemon-reload
+systemctl restart wazuh-indexer
+
